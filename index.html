@@ -11,7 +11,7 @@
 <body>
 	<div class="sidebar">
 		<div class="topo">
-			<h3>Wepp.<span style="color: #8c52ff;">Code</span></h3>
+			<h3>Dev <span style="color: #8c52ff;">Luigi</span></h3>
 		</div><!-- topo -->
 		<div class="menu">
 			<ul>
@@ -191,28 +191,6 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/function.js"></script>
-<script src="js/message-alert.js"></script>
-<script>
-	$(function(){
-		var windowWidth = $(window)[0].innerWidth;
-		if(windowWidth  <= 768){
-			$('.nome-usuario h2').click(function(){
-			var el = $('.sidebar');
-			if(el.is(':visible')){
-				el.hide();
-				$('.main-content').css('left','0');
-			}else{
-				el.show();
-				$('.main-content').css('left','300px');
-			}
-		})
-		}
-
-		$(window).resize(function(){
-			var windowWidth = $(window)[0].innerWidth;
-		})
-	})
-</script>
 
 </body>
 </html>
