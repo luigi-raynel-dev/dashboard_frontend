@@ -1,0 +1,588 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat';
+}
+
+html,body{
+	height: 100%;
+	background: #FAF9FC;
+}
+
+button,input,textarea{
+	outline: 0;
+}
+
+.clear{
+	clear: both;
+}
+
+div.sidebar{
+	float: left;
+	width: 300px;
+	height: 100%;
+	background-color: #2d3035;
+}
+
+div.topo{
+	background-color: #26282d;
+	text-align: center;
+	padding: 20px 10px;
+}
+
+div.topo h3{
+	color: white;
+}
+
+div.menu{
+	padding: 30px;
+}
+
+div.menu ul{
+	list-style-type: none; 
+}
+
+div.menu ul li{
+	font-size: 18px;
+	color: #717171;
+	margin-bottom: 20px;
+}
+
+div.menu ul li a{
+	font-size: 18px;
+	color: #717171;
+	text-decoration: none;
+}
+
+div.menu li:hover i{
+	transition: 0.6s;
+	color: #8c52ff;
+}
+
+div.menu li:hover a{
+	transition: 0.6s;
+	color: white;
+}
+
+div.menu li.active i{
+	color: #8c52ff;
+}
+
+div.menu li.active a{
+	color: white;
+}
+
+/*fim da sidebar*/
+
+div.main-content{
+	float: left;
+	width: calc(100% - 300px);
+	height: 100%;
+}
+
+header{
+	height: 90px;
+	background-color: white;
+	padding:20px 15px;
+	border-bottom: 2px solid #ccc;
+}
+
+.pesquisa-campo{
+	float: right;
+}
+
+.icone-pesquisa{
+	background-color: #d6d6d6;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	color: white;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.icone-pesquisa i{
+	position: relative;
+	top: 5px;
+}
+
+.pesquisa-campo form{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.pesquisa-campo input[type=text]{
+	width: 200px;
+	height: 30px;
+	border-top:1px solid rgb(220,220,220);
+	border-right: 1px solid rgb(220,220,220);
+	border-bottom:1px solid rgb(220,220,220);
+	border-left: 0;
+	padding-left: 10px;
+	font-size: 16px;
+}
+
+.pesquisa-campo input[type=text]:focus{
+	outline: 0;
+	box-shadow: 1px 1px 4px 2px #8c52ff;
+}
+
+.icone-alerta{
+	cursor: pointer;
+	background: #FBEDEF;
+	width: 30px;
+	height: 30px;
+	margin-right: 28px;
+	float: right;
+	text-align: center;
+	position: relative;
+}
+
+.icone-alerta:hover{
+	background: #ddced0;
+}
+
+.icone-alerta i{
+	line-height: 30px;
+	font-size: 18px;
+	color: #ED7387;
+	font-weight: bold;
+}
+
+.icone-alerta p{
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	display: inline-block;
+	background: #ED7387;
+	color: white;
+	padding:3px;
+	font-size: 12px;
+}
+
+.nome-usuario{
+	float: left;
+}
+
+.nome-usuario h2  > i.fa-bars{
+	margin-right: 20px;
+}
+
+.nome-usuario h2  > i.fa-user{
+	display: none;
+}
+
+.nome-usuario h2{
+	margin-top: 8px;
+	font-weight: normal;
+	font-size: 23px;
+	color:#A7A7A7;
+	cursor: pointer;
+}
+
+/*Fim do header*/
+
+/*popup-alert*/
+
+
+.bg{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.popup{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 1px 1px 4px 2px #8c52ff;
+	background-color: white;
+	max-width: 400px;
+	padding: 20px 0; 
+	width: calc(94% - 32px);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.popup h2{
+	color: #8c52ff;
+	margin-bottom: 10px;
+
+}
+
+.popup-message{
+	padding: 10px 2px;
+	width: 100%;
+	background-color: #f1f1f1;
+	border: 1px solid #ccc;
+}
+
+.popup-message a{
+	color: black;
+}
+
+.popup button{
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	border:0;
+	background-color: #8c52ff;
+	color: white;
+	margin-top: 8px;
+	cursor: pointer; 
+	transition: 1s;
+}
+
+.popup button:hover{
+	background-color:#7241d3;
+}
+
+.popup .hide{
+	margin-top: 10px;
+	display: none;
+}
+
+.closeBtn{
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	border: 1px solid #ccc;
+	background-color: white;
+	color: #8c52ff;
+	font-size: 19px;
+	font-weight: bold;
+	font-family: 'tahoma';
+	position: absolute;
+	right: -16px;
+	top: -16px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+/*Fim do popup*/
+
+
+/*Começo do cotent1*/
+.content1{
+	float: left;
+	width: 80%;
+	padding:30px;
+	overflow-y: auto;
+	height: calc(100% - 90px);
+}
+
+.panel{
+	margin-bottom: 10px;
+	padding: 30px;
+	width:100%;
+	float: left;
+	background-color: white;
+	border:2px solid #ebebeb;
+}
+
+.panel > .container{
+	width: 100%;
+	padding: 10px 0;
+}
+
+.panel > .btn-flex{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.panel .btn-line{
+	display: flex;
+}
+
+.panel .btn-single{
+	width: 100%;
+	padding: 5px 3px;
+	border-radius: 10px;
+	margin: 10px;
+	background-color: rgb(200,200,200);
+	border:0;
+	cursor: pointer;
+}
+
+.panel .btn-single:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+.w50{
+	width: 49%;
+}
+
+.w50:nth-of-type(1){
+	margin-right: 1% !important;
+	background: black;
+}
+
+.w50:nth-of-type(2){
+	margin-left: 1% !important;
+}
+
+.w50 i{
+	text-align: center;
+	line-height: 20px;
+	color: #666;
+	font-size: 12px;
+	background-color: rgb(200,200,200);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.w50 > .container{
+	width: 96%;
+	padding: 10px 2%;
+}
+
+.w50 form input[type=text]{
+	color: black !important;
+	border:1px solid #ccc;
+	margin-top: 8px;
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	padding-left: 10px; 
+}
+
+.w50 form textarea{
+	color: black !important;
+	border:1px solid #ccc;
+	margin-top: 8px;
+	width: 100%;
+	height: 100px;
+	border-radius: 10px;
+	padding-left: 10px;
+	resize: vertical;
+}
+
+.w50 form textarea:focus,
+.w50 form input[type=text]:focus,
+.w50 form input[type=submit]:focus{
+	outline: 0;
+	color: black !important;
+}
+
+.w50 form input[type=submit]{
+	font-size: 17px;
+	margin-top: 8px;
+	cursor: pointer;
+	width: 100%;
+	height: 35px;
+	border-radius: 30px;
+	color: white !important;
+	background-color: #8c52ff;
+	border:0;
+	transition: 1s;
+}
+
+.w50 form input[type=submit]:hover{
+	background-color:#7241d3;
+}
+
+.w50 h3{
+	margin-top: 10px;
+	font-size: 16px;
+	color: #b2b2b2;
+}
+
+.w50 h3 > a{
+	color: black;
+}
+
+.w50 > .align-button{
+	width: 100%;
+	padding: 15px 2%;
+	text-align: center;
+}
+
+.w50 > .align-button > button{
+	width: 100%;
+	height: 35px;
+	padding: 5px 3px;
+	border-radius: 10px;
+	margin-top: 10px;
+	background-color: rgb(200,200,200);
+	border:0;
+	cursor: pointer;
+}
+
+.w50 > .align-button > button:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+.panel h2{
+	color: #7f7f7f;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.panel p{
+	margin-top: 10px;
+	font-size: 17px;
+	color: #b2b2b2;
+}
+
+/*fim do content1*/
+
+.ultimas-atividades{
+	width: 20%;
+	background-color: #EAEBEB;
+	padding: 20px 40px;
+	float: left;
+	height: calc(100% - 90px);
+	overflow-y: auto;
+}
+
+.atividades-topo h2{
+	font-weight: normal;
+	color: #7f7f7f;
+	font-size: 23px;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.atividade-registro{
+	position: relative;
+	padding: 15px 10px;
+	border-left: 1px solid #bbbbbb;
+}
+
+.circle-atividade{
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	background-color: #e9ebeb;
+}
+
+.atividade-registro h2{
+	color: #bbbbbb;
+	font-size: 19px;
+	font-weight: normal;
+}
+
+.atividade-registro p{
+	color: #555;
+	font-size: 15px;
+}
+
+.atividade-registro a{
+	color: black;
+}
+
+
+/*responsivo*/
+
+@media screen and (max-width: 1250px){
+	.atividades-topo h2{
+		font-size: 20px;
+		padding: 10px;
+	}
+
+}
+
+@media screen and (max-width: 1150px){
+	.atividades-topo h2{
+		font-size: 17px;
+		padding: 6px;
+	}
+
+	.atividade-registro p{
+		color: #555;
+		font-size: 13px;
+	}
+
+}
+
+@media screen and (max-width: 1080px){
+
+	.ultimas-atividades{
+		display: none;
+	}
+
+	.content1{
+		width: 100%;
+	}
+
+	.panel{
+		width: 100% !important;
+	}
+
+	.nome-usuario h2{
+		margin-top: 8px;
+		font-weight: normal;
+		font-size: 20px;
+		color:#A7A7A7;
+		cursor: pointer;
+}
+
+}
+
+@media screen and (max-width: 768px){
+
+	.nome-usuario h2 > span{
+		font-size: 15px;
+	}
+	.sidebar{
+		position: relative;
+		z-index: 9999;
+		display: none;
+	}
+
+	div.main-content{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 600px){
+	.panel .btn-line{
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.panel .btn-single{
+		font-size: 16px;
+		margin: 10px auto;
+		width: 70%;
+		/*height: 30px;*/
+	}
+
+	.nome-usuario h2 > span{
+		display: none;
+	}
+
+	.nome-usuario h2  > i.fa-user{
+		display: inline-block;
+	}
+
+	.w50:nth-of-type(1){
+		margin-right: 0 !important;
+	}
+
+	.w50:nth-of-type(2){
+		margin-left: 0 !important;
+	}
+}
